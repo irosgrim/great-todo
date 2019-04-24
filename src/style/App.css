@@ -1,0 +1,194 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+:root {
+  --default-font-size: 16px;
+  --document-bg: #ffffff;
+  --font-color-dark: #547289;
+  --input-placeholder-color: #A4CCB1;
+  --input-focus-color: #FF8C22;
+  --note-separation-border: #B5D4C0;
+  font-size: var(--default-font-size);
+}
+
+body {
+  background-color: var(--document-bg);
+  font-family: 'Montserrat', sans-serif;
+  color: var(--font-color-dark);
+  font-weight: 500;
+  background: url('../imgs/wavy-lines.svg') left top no-repeat, url('../imgs/waves.svg') right bottom no-repeat;
+}
+
+.App {
+  max-width: 80%;
+  min-height: 200px;
+  margin: 240px auto;
+}
+
+nav {
+  max-width: 600px;
+  margin: 40px auto 100px auto;
+  display: flex;
+  justify-content: flex-end;
+  color: #3BB57B;
+}
+
+ul {
+  display: flex;
+  list-style-type: none;
+}
+
+li {
+  padding: 0 5px;
+}
+
+.link {
+  cursor: pointer;
+  font-weight: 300;
+}
+
+.add-note-frame form {
+  position: relative;
+  margin: 0 auto;
+  max-width: 600px;
+}
+
+.add-note-frame input {
+  width: 100%;
+  height: 80px;
+  background: rgba(255, 255, 255, 0.85);
+  border: 1px solid #63CF9B;
+  border-radius: 5px;
+  padding: 0px 60px 0px 30px;
+  font-size: 1.75rem;
+  color: var(--font-color-dark);
+  transition: 0.3s;
+}
+
+.add-note-frame input:focus {
+  outline: none;
+  border: 2px solid var(--input-focus-color);
+}
+
+.add-note-frame input::placeholder {
+  font-size: 1.75rem;
+  color: var(--input-placeholder-color);
+  font-weight: 300;
+  transition: 0.3s;
+}
+
+.add-btn {
+  position: absolute;
+  top: 8px;
+  right: 20px;
+  font-size: 52px;
+  outline: none;
+  border: none;
+  color: #3BB57B;
+  background-color: rgba(255, 255, 255, 0);
+  opacity: 0.5;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.add-btn:hover {
+  opacity: 1;
+}
+
+.notes-frame {
+  transition: 0.5s;
+}
+
+.notes-frame>*:not(:last-child) {
+  border-bottom: 1px solid var(--note-separation-border);
+}
+
+.note-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 90px;
+  transition: 0.5s;
+}
+
+.note-container:hover {
+  background-color: #f5faf7;
+}
+
+.note {
+  text-align: left;
+  width: 100%;
+  font-size: 1.5rem;
+}
+
+.done {
+  text-decoration: line-through;
+  font-weight: 400;
+  font-style: italic;
+}
+
+.note-controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.btn {
+  margin: 0 10px;
+  opacity: 0.5;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.btn:hover {
+  opacity: 1;
+}
+
+.modal {
+  position: fixed;
+  overflow: auto;
+  z-index: 2;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.158);
+}
+
+.modal-window {
+  margin: 100px auto;
+  width: 400px;
+  height: 200px;
+  text-align: center;
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 5px;
+  box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.15);
+}
+
+.modal-window h3 {
+  margin: 20px 0 60px 0;
+  font-weight: 500;
+}
+
+.modal-window button {
+  font-size: 1rem;
+  border-radius: 5px;
+  border: none;
+  outline: none;
+  background-color: #f1f7eb;
+  height: 40px;
+  padding: 0 40px;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.modal-window button:hover {
+  background-color: #dee6d7;
+}
